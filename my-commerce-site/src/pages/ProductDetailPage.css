@@ -1,0 +1,36 @@
+/* ProductDetailPage.css */
+
+.product-detail {
+    display: flex;
+    padding: 2rem;
+  }
+  
+  .product-detail img {
+    max-width: 400px;
+    margin-right: 2rem;
+  }
+  
+  .product-detail__info {
+    max-width: 600px;
+  }
+  
+  .product-detail__info h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .product-detail__info p {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+  }
+  
+  .product-detail__info button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+  }
+  

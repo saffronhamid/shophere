@@ -1,0 +1,157 @@
+/* ButtonStyles.css */
+
+/* General button styles */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Style for Add to Cart button */
+  button.add-to-cart {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  button.add-to-cart:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style for Remove button */
+  button.remove-from-cart {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  button.remove-from-cart:hover {
+    background-color: #c82333;
+  }
+  
+  /* Style for Clear Cart button */
+  button.clear-cart {
+    background-color: #ffc107;
+    color: black;
+  }
+  
+  button.clear-cart:hover {
+    background-color: #e0a800;
+  }
+  
+  /* Style for Proceed to Checkout button */
+  button.proceed-to-checkout {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  button.proceed-to-checkout:hover {
+    background-color: #218838;
+  }
+  /* Button container styles */
+.cart-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: flex-start; /* Align towards the top */
+  margin-top: 50px; /* Add space from the top */
+}
+
+.cart-buttons {
+  display: flex;
+  gap: 10px; /* Space between the buttons */
+  margin-top: 20px; /* Add space above the buttons */
+}
+
+/* General button styles */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Style for Clear Cart button */
+button.clear-cart {
+  background-color: #ffc107;
+  color: black;
+}
+
+button.clear-cart:hover {
+  background-color: #e0a800;
+}
+
+/* Style for Proceed to Checkout button */
+button.proceed-to-checkout {
+  background-color: #28a745;
+  color: white;
+}
+
+button.proceed-to-checkout:hover {
+  background-color: #218838;
+}
+/* Button container styles */
+.cart-buttons {
+  display: flex;
+  flex-direction: column; /* Arrange buttons vertically */
+  gap: 15px; /* Space between buttons */
+  margin-top: 20px; /* Space above the buttons */
+  align-items: center; /* Center the buttons */
+}
+
+/* General button styles */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Style for Clear Cart button */
+button.clear-cart {
+  background-color: #ffc107;
+  color: black;
+}
+
+button.clear-cart:hover {
+  background-color: #e0a800;
+}
+
+/* Style for Proceed to Checkout button */
+button.proceed-to-checkout {
+  background-color: #28a745;
+  color: white;
+}
+
+button.proceed-to-checkout:hover {
+  background-color: #218838;
+}
+/* src/styles/ButtonStyles.css */
+
+/* General button styling for product "Add to Cart" buttons */
+button.add-to-cart {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button.add-to-cart:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+button.add-to-cart:active {
+  background-color: #004085;
+  transform: scale(1);
+}
+

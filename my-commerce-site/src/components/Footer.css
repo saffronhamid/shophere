@@ -1,0 +1,39 @@
+/* Footer.css */
+
+.footer {
+    background-color: #fff;
+    padding: 1rem 2rem;
+    border-top: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .footer__links {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer__links a {
+    margin: 0 0.5rem;
+    color: #333;
+  }
+  
+  .footer__links a:hover {
+    color: #007bff;
+  }
+  /* Footer.css */
+footer {
+  background: rgba(0, 0, 0, 0.5); /* A semi-transparent background */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+  
+  .content {
+    min-height: calc(100vh - 50px); /* Adjust this to the height of your navbar and footer */
+  }
+  
+  
+  
