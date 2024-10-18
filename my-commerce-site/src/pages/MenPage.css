@@ -1,0 +1,30 @@
+.fashion-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90vh;
+    padding: 20px;
+  }
+  
+  .fashion-section {
+    width: 45%;
+    text-align: center;
+  }
+  
+  .fashion-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .winter {
+    background-color: #f0f8ff;
+    padding: 20px;
+  }
+  
+  .summer {
+    background-color: #fffacd;
+    padding: 20px;
+  }
+  

@@ -1,62 +1,24 @@
-// src/pages/WomenPage.js
-import React, { useContext } from 'react';
-import { CartContext } from '../context/CartContext';
-import products from '../data/products'; // Assuming product data is available
-import './SeasonPage.css';  // Use the same CSS file
+import React from 'react';
+import './WomenPage.css';
 
 const WomenPage = () => {
-  const { addToCart } = useContext(CartContext);
-
-  // Filter products for Women
-  const summerProducts = products.filter(product => product.category === 'Women' && product.season === 'Summer');
-  const winterProducts = products.filter(product => product.category === 'Women' && product.season === 'Winter');
-
   return (
-    <div className="season-page">
-      {/* Winter Section */}
-      <div
-        className="winter-section"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1517019381980-fd7b23a6f3b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDd8fHd8fGVufDB8fHx8MTY3ODAxMjI4NQ&ixlib=rb-1.2.1&q=80&w=1080')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-        }}
-      >
-        <h2>Winter Collection</h2>
-        <ul>
-          {winterProducts.map((product) => (
-            <li key={product.id} className="product-item">
-              <img src={product.image} alt={product.name} />
-              <h3>{product.name}</h3>
-              <p>${product.price}</p>
-              <button onClick={() => addToCart(product)}>Add to Cart</button>
-            </li>
-          ))}
-        </ul>
+    <div className="season-page-container">
+      <div className="winter-section">
+        <h2>Winter Fashion</h2>
+        <img
+          src="https://media.istockphoto.com/id/1061226004/photo/photo-of-young-beautiful-happy-smiling-woman.webp?a=1&b=1&s=612x612&w=0&k=20&c=jrn8HJMuVKajqOIuHIR2UgthcjdT3_j_Vg_-mS_ZEHg="  // Update with appropriate image
+          alt="Winter Fashion"
+          className="season-image"
+        />
       </div>
-
-      {/* Summer Section */}
-      <div
-        className="summer-section"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDd8fHN1bW1lciUyMGZhc2hpb258ZW58MHx8fHwxNjE4NTYzODQ3&ixlib=rb-1.2.1&q=80&w=1080')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-        }}
-      >
-        <h2>Summer Collection</h2>
-        <ul>
-          {summerProducts.map((product) => (
-            <li key={product.id} className="product-item">
-              <img src={product.image} alt={product.name} />
-              <h3>{product.name}</h3>
-              <p>${product.price}</p>
-              <button onClick={() => addToCart(product)}>Add to Cart</button>
-            </li>
-          ))}
-        </ul>
+      <div className="summer-section">
+        <h2>Summer Fashion</h2>
+        <img
+          src="https://media.istockphoto.com/id/2153355411/photo/golden-hour-greeting.webp?a=1&b=1&s=612x612&w=0&k=20&c=DKvuaO8eSvw0tXUtdCJaVyGf2Llq17Xdo1TisdWENYg="  // Update with appropriate image
+          alt="Summer Fashion"
+          className="season-image"
+        />
       </div>
     </div>
   );

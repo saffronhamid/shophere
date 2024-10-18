@@ -1,0 +1,28 @@
+.season-page-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .winter-section,
+  .summer-section {
+    width: 45%;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff9c4; /* Light yellow for kids */
+    border-radius: 10px;
+  }
+  
+  .season-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #f57f17;
+  }
+  

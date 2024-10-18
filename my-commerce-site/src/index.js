@@ -1,15 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import ReactDOM from 'react-dom/client'; // Import from 'react-dom/client' instead of 'react-dom'
+import './index.css';
 import App from './App';
-import CartProvider from './context/CartContext';
-import './styles/global.css';
+import { CartProvider } from './context/CartContext'; 
+import { WishlistProvider } from './context/WishlistContext';
+import { BrowserRouter } from 'react-router-dom';
 
-ReactDOM.render(
+// Create the root element and use createRoot
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
   <BrowserRouter>
     <CartProvider>
-      <App />
+      <WishlistProvider>
+        <App />
+      </WishlistProvider>
     </CartProvider>
-  </BrowserRouter>,
-  document.getElementById('root')
+  </BrowserRouter>
 );

@@ -5,7 +5,7 @@ const HomePage = () => {
     <div
       className="home-container"
       style={{
-        backgroundImage: "url('https://images.unsplash.com/photo-1649771544464-03bedb456a4f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+        backgroundImage: "url('https://media.istockphoto.com/id/1995160630/de/foto/relaxed-afternoon-hangout-with-gen-z-friends-at-the-skate-park.jpg?s=2048x2048&w=is&k=20&c=n2mrW32ClG1dSwS-ZGLCLZ83DJkJ2ww3QnHwdETn4y8=')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         height: '100vh',

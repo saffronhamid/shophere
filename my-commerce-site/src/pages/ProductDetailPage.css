@@ -1,36 +1,27 @@
-/* ProductDetailPage.css */
-
-.product-detail {
-    display: flex;
-    padding: 2rem;
+.product-actions {
+    margin-top: 20px;
   }
   
-  .product-detail img {
-    max-width: 400px;
-    margin-right: 2rem;
-  }
-  
-  .product-detail__info {
-    max-width: 600px;
-  }
-  
-  .product-detail__info h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  .product-detail__info p {
-    font-size: 1.5rem;
-    color: #007bff;
-    margin-bottom: 1rem;
-  }
-  
-  .product-detail__info button {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: #fff;
+  .add-to-bag-btn, .add-to-wishlist-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
     border: none;
-    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-to-bag-btn:hover, .add-to-wishlist-btn:hover {
+    background-color: #218838;
+  }
+  
+  .add-to-wishlist-btn {
+    background-color: #ff8c00;
+  }
+  
+  .add-to-wishlist-btn:hover {
+    background-color: #e07b00;
   }
   
