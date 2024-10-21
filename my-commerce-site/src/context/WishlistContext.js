@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import { createContext, useState, useContext } from 'react';
 
 export const WishlistContext = createContext();
 
@@ -7,10 +7,11 @@ export const WishlistProvider = ({ children }) => {
 
   const addToWishlist = (product) => {
     setWishlistItems((prevItems) => {
-      if (!prevItems.find((item) => item.id === product.id)) {
+      const isItemInWishlist = prevItems.find((item) => item.id === product.id);
+      if (!isItemInWishlist) {
         return [...prevItems, product];
       }
-      return prevItems; // If item already in wishlist, do nothing
+      return prevItems;
     });
   };
 
@@ -24,3 +25,5 @@ export const WishlistProvider = ({ children }) => {
     </WishlistContext.Provider>
   );
 };
+
+export const useWishlist = () => useContext(WishlistContext);

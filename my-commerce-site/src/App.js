@@ -15,6 +15,8 @@ import MenSummerProduct from './pages/MenSummerProduct';
 import ProductDetailPage from './pages/ProductDetailPage';
 import { CartProvider } from './context/CartContext';  // Correct import for named export
 import { WishlistProvider } from './context/WishlistContext'; // Import WishlistProvider
+import WishlistPage from './pages/WishlistPage';
+
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
           <Navbar />
           <div className="content">
             <Routes>
+            <Route path="/wishlist" element={<WishlistPage />} />
+
               <Route path="/" element={<HomePage />} />
               <Route path="/cart" element={<CartPage />} />
               <Route path="/profile" element={<ProfilePage />} /> {/* Add Profile Page Route */}

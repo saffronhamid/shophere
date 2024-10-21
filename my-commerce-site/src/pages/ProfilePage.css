@@ -1,48 +1,116 @@
-.product-card {
-  background: white;
-  border-radius: 8px;
+/* General Styling for the Container */
+.profile-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full screen height */
+  background-color: #f7f7f7; /* Light background for elegance */
   padding: 20px;
+}
+
+/* Styling the Form Box */
+.profile-form {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px; /* Limit form width */
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 10px;
 }
 
-.product-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-.product-card h3 {
-  margin: 10px 0;
-  font-size: 18px;
-}
-
-.product-card p {
-  font-size: 16px;
+/* Headings */
+.profile-form h2 {
+  color: #ff3f6c;
+  margin-bottom: 30px;
+  font-size: 28px;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
-.add-to-cart-btn,
-.add-to-wishlist-btn {
-  background-color: #ff6600;
+/* Form Inputs */
+.profile-form label {
+  display: block;
+  text-align: left;
+  color: #333;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.profile-form input[type="text"],
+.profile-form input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  transition: border 0.3s ease;
+}
+
+.profile-form input[type="text"]:focus,
+.profile-form input[type="password"]:focus {
+  outline: none;
+  border-color: #ff3f6c;
+}
+
+/* Submit Button */
+.profile-form button {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #ff3f6c;
   color: white;
   border: none;
-  padding: 10px 15px;
-  margin: 10px 5px;
   border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.profile-form button:hover {
+  background-color: #e63e70;
+}
+
+/* Toggle Register/Login Button */
+.toggle-btn {
+  background-color: transparent;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 5px;
   font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.add-to-cart-btn:hover,
-.add-to-wishlist-btn:hover {
-  background-color: #cc5200;
+.toggle-btn:hover {
+  background-color: #ff3f6c;
+  color: white;
+  border-color: #ff3f6c;
 }
 
-.product-card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
+/* Small Text */
+.small-text {
+  color: #666;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* Mobile Friendly */
+@media (max-width: 768px) {
+  .profile-form {
+    padding: 20px;
+    max-width: 300px;
+  }
+
+  .profile-form h2 {
+    font-size: 24px;
+  }
+
+  .profile-form button {
+    font-size: 14px;
+  }
 }
