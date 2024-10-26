@@ -1,0 +1,126 @@
+/* ProductModal.css */
+
+/* Modal Background Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);  /* Dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.9);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+/* Close Button */
+.modal-close-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  margin-bottom: 1rem;
+}
+
+.modal-close-button:hover {
+  background-color: #0056b3;
+}
+
+/* Product Title */
+.modal-product-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  margin: 1rem 0;
+}
+
+/* Product Image */
+.modal-product-image {
+  width: 100%;
+  max-width: 200px;
+  margin: 1rem auto;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+/* Product Description */
+.modal-product-description {
+  font-size: 1rem;
+  color: #666;
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+/* Product Price */
+.modal-product-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 1.5rem;
+}
+
+/* Action Buttons Container */
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Add to Cart and Add to Wishlist Buttons */
+.modal-button {
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal-button.add-to-cart {
+  background-color: #28a745;
+}
+
+.modal-button.add-to-cart:hover {
+  background-color: #218838;
+}
+
+.modal-button.add-to-wishlist {
+  background-color: #ff4757;
+}
+
+.modal-button.add-to-wishlist:hover {
+  background-color: #e04050;
+}

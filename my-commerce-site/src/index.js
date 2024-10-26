@@ -5,6 +5,8 @@ import App from './App';
 import { CartProvider } from './context/CartContext'; 
 import { WishlistProvider } from './context/WishlistContext';
 import { BrowserRouter } from 'react-router-dom';
+import './styles/global.css'; // Import global styles
+
 
 // Create the root element and use createRoot
 const root = ReactDOM.createRoot(document.getElementById('root'));

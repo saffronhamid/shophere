@@ -1,116 +1,104 @@
-/* General Styling for the Container */
-.profile-page-container {
+/* Profile Page Container Styling */
+.profile-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  min-height: 100vh; /* Full screen height */
-  background-color: #f7f7f7; /* Light background for elegance */
+  justify-content: center;
+  height: 100vh;
+  background-color: #f7f9fc;
   padding: 20px;
 }
 
-/* Styling the Form Box */
-.profile-form {
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  padding: 40px;
+/* Registration Box Styling */
+.register-box {
   width: 100%;
-  max-width: 400px; /* Limit form width */
+  max-width: 360px;
+  background-color: #ffffff;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
   text-align: center;
 }
 
-/* Headings */
-.profile-form h2 {
-  color: #ff3f6c;
-  margin-bottom: 30px;
-  font-size: 28px;
-  font-weight: bold;
-  text-transform: uppercase;
+/* Logo */
+.logo {
+  width: 80px;
+  margin: 0 auto 20px;
 }
 
-/* Form Inputs */
-.profile-form label {
-  display: block;
-  text-align: left;
+/* Heading Styling */
+.register-box h2 {
   color: #333;
-  font-size: 14px;
-  margin-bottom: 5px;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
-.profile-form input[type="text"],
-.profile-form input[type="password"] {
+/* Input Fields Styling */
+.register-box input[type="text"],
+.register-box input[type="password"] {
   width: 100%;
-  padding: 12px 15px;
-  margin-bottom: 20px;
+  padding: 12px;
+  margin: 8px 0;
+  font-size: 16px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  font-size: 16px;
-  background-color: #f9f9f9;
-  transition: border 0.3s ease;
+  box-sizing: border-box;
 }
 
-.profile-form input[type="text"]:focus,
-.profile-form input[type="password"]:focus {
+.register-box input[type="text"]:focus,
+.register-box input[type="password"]:focus {
+  border-color: #4a90e2;
   outline: none;
-  border-color: #ff3f6c;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.2);
 }
 
-/* Submit Button */
-.profile-form button {
+/* Register Button */
+button.register-button {
   width: 100%;
-  padding: 12px 20px;
-  background-color: #ff3f6c;
-  color: white;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #32a852;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
-  font-weight: bold;
   cursor: pointer;
+  margin-top: 20px;
   transition: background-color 0.3s ease;
-  margin-bottom: 15px;
 }
 
-.profile-form button:hover {
-  background-color: #e63e70;
+button.register-button:hover {
+  background-color: #27923c;
 }
 
-/* Toggle Register/Login Button */
-.toggle-btn {
-  background-color: transparent;
-  color: #333;
-  border: 1px solid #ddd;
-  padding: 10px 20px;
-  border-radius: 5px;
+/* Already Registered Link */
+.register-box .login-link {
+  display: inline-block;
+  margin-top: 15px;
   font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  color: #4a90e2;
+  text-decoration: none;
 }
 
-.toggle-btn:hover {
-  background-color: #ff3f6c;
-  color: white;
-  border-color: #ff3f6c;
+.register-box .login-link:hover {
+  text-decoration: underline;
 }
 
-/* Small Text */
-.small-text {
+/* Footer Styling */
+.footer {
+  margin-top: 40px;
+  font-size: 14px;
   color: #666;
-  font-size: 12px;
-  margin-top: 10px;
+  text-align: center;
 }
 
-/* Mobile Friendly */
-@media (max-width: 768px) {
-  .profile-form {
-    padding: 20px;
-    max-width: 300px;
-  }
+.footer a {
+  color: #4a90e2;
+  text-decoration: none;
+  margin: 0 8px;
+}
 
-  .profile-form h2 {
-    font-size: 24px;
-  }
-
-  .profile-form button {
-    font-size: 14px;
-  }
+.footer a:hover {
+  text-decoration: underline;
 }

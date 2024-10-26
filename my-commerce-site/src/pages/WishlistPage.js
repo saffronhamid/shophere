@@ -1,36 +1,34 @@
+// WishlistPage.js
 import React from 'react';
 import { useWishlist } from '../context/WishlistContext';
-import { useCart } from '../context/CartContext';
-import './WishlistPage.css';  // Import the CSS file
+import './WishlistPage.css';
 
 const WishlistPage = () => {
-  const { wishlistItems, removeFromWishlist } = useWishlist();
-  const { addToCart } = useCart();
+    const { wishlist } = useWishlist();
 
-  return (
-    <div className="page-container">
-      <h2>Wishlist</h2>
-      <div className="page-items">
-        {wishlistItems.length === 0 ? (
-          <p>Your wishlist is empty</p>
-        ) : (
-          wishlistItems.map((item) => (
-            <div className="page-item" key={item.id}>
-              <img src={item.image} alt={item.name} />
-              <div className="page-item-details">
-                <h3>{item.name}</h3>
-                <p>Price: ${item.price}</p>
-                <div className="page-actions">
-                  <button onClick={() => addToCart(item)}>Add to Cart</button>
-                  <button className="remove-btn" onClick={() => removeFromWishlist(item.id)}>Remove</button>
-                </div>
-              </div>
+    return (
+        <div className="wishlist-container">
+            <h1 className="wishlist-title">Wishlist</h1>
+            <div className="wishlist-items">
+                {wishlist.map((item) => (
+                    <div key={item.id} className="wishlist-item">
+                        <img src={item.image} alt={item.title} />
+                        <h2 className="wishlist-item-title">{item.title}</h2>
+                        <p className="wishlist-item-description">
+                            {item.description.length > 80
+                                ? `${item.description.substring(0, 80)}...`
+                                : item.description}
+                        </p>
+                        <p className="wishlist-item-price">Price: ${item.price}</p>
+                        <div className="wishlist-actions">
+                            <button className="wishlist-button add-to-cart">Add to Cart</button>
+                            <button className="wishlist-button remove">Remove</button>
+                        </div>
+                    </div>
+                ))}
             </div>
-          ))
-        )}
-      </div>
-    </div>
-  );
+        </div>
+    );
 };
 
 export default WishlistPage;

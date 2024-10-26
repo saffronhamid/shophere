@@ -1,28 +1,50 @@
-.season-page-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .winter-section,
-  .summer-section {
-    width: 45%;
-    text-align: center;
-    padding: 20px;
-    background-color: #fce4ec; /* Light pink for women */
-    border-radius: 10px;
-  }
-  
-  .season-image {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-  
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #d81b60;
-  }
-  
+/* Product List Styles */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-item {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.product-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
+}
+
+.product-item h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.product-item img {
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.product-item p {
+  font-size: 14px;
+  color: #666;
+}
+
+.product-item .price {
+  font-size: 18px;
+  color: #007bff;
+  margin-top: 10px;
+}
+
+.product-item button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+}

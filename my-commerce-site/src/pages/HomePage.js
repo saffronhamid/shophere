@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   return (
@@ -10,6 +11,7 @@ const HomePage = () => {
         backgroundPosition: 'center',
         height: '100vh',
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
         color: 'white',
@@ -21,30 +23,79 @@ const HomePage = () => {
         style={{
           padding: '30px',
           borderRadius: '15px',
-          boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.6)',  // Stronger shadow for text block
+          boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.6)', 
         }}
       >
         <h1
           style={{
-            fontSize: '4rem',  // Larger font size for better visibility
+            fontSize: '4rem',
             fontWeight: 'bold',
             letterSpacing: '2px',
-            color: '#fff',  // Pure white text color
-            textShadow: '2px 2px 8px rgba(0, 0, 0, 0.8)',  // Stronger text shadow for better contrast
+            color: '#fff',
+            textShadow: '2px 2px 8px rgba(0, 0, 0, 0.8)',
           }}
         >
           Welcome to Saffron's Gallery
         </h1>
-        <p
+      </div>
+
+      {/* Navigation Links to Category Pages */}
+      <div
+        className="category-links"
+        style={{
+          display: 'flex',
+          gap: '20px',
+          marginTop: '40px',
+        }}
+      >
+        <Link 
+          to="/men"
           style={{
-            fontSize: '2rem',
-            marginTop: '10px',
-            letterSpacing: '1px',
-            color: '#ddd',  // Slightly lighter subtext
-            textShadow: '1px 1px 6px rgba(0, 0, 0, 0.8)',  // Subtle shadow for the subtext
+            padding: '15px 30px',
+            backgroundColor: '#333',
+            color: '#fff',
+            borderRadius: '10px',
+            fontSize: '1.2rem',
+            fontWeight: 'bold',
+            textDecoration: 'none',
+            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.5)',
+            transition: '0.3s',
           }}
         >
-        </p>
+          Men
+        </Link>
+        <Link 
+          to="/women"
+          style={{
+            padding: '15px 30px',
+            backgroundColor: '#333',
+            color: '#fff',
+            borderRadius: '10px',
+            fontSize: '1.2rem',
+            fontWeight: 'bold',
+            textDecoration: 'none',
+            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.5)',
+            transition: '0.3s',
+          }}
+        >
+          Women
+        </Link>
+        <Link 
+          to="/kids"
+          style={{
+            padding: '15px 30px',
+            backgroundColor: '#333',
+            color: '#fff',
+            borderRadius: '10px',
+            fontSize: '1.2rem',
+            fontWeight: 'bold',
+            textDecoration: 'none',
+            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.5)',
+            transition: '0.3s',
+          }}
+        >
+          Kids
+        </Link>
       </div>
     </div>
   );

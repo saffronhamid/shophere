@@ -1,39 +1,40 @@
-/* Footer.css */
 
-.footer {
-    background-color: #fff;
-    padding: 1rem 2rem;
-    border-top: 1px solid #ddd;
-    text-align: center;
-  }
-  
-  .footer__links {
-    margin-bottom: 0.5rem;
-  }
-  
-  .footer__links a {
-    margin: 0 0.5rem;
-    color: #333;
-  }
-  
-  .footer__links a:hover {
-    color: #007bff;
-  }
-  /* Footer.css */
+/* Footer Styles */
 footer {
-  background: rgba(0, 0, 0, 0.5); /* A semi-transparent background */
+  background-color: #343a40;
   color: white;
   text-align: center;
-  padding: 10px 0;
-  position: relative;
+  padding: 15px;
+  position: relative; /* Update to relative */
   bottom: 0;
   width: 100%;
+  margin-top: 30px;
 }
 
-  
-  .content {
-    min-height: calc(100vh - 50px); /* Adjust this to the height of your navbar and footer */
-  }
-  
-  
-  
+footer p {
+  margin: 0;
+  font-size: 14px;
+  color: #ccc;
+}
+/* Ensure the entire page is a flex container */
+body, html {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  flex: 1; /* This ensures that the content takes up available space */
+}
+
+/* The footer stays at the bottom */
+footer {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+  margin-top: auto;
+}
