@@ -1,23 +1,26 @@
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
+/* Make the app container fill the viewport height */
 .App {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Make sure the app takes full height */
+  min-height: 100vh;
+}
+
+/* Ensure content-wrapper takes up remaining space */
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .content {
-  flex: 1; /* This ensures that the content expands to fill the available space */
+  flex: 1;
+  padding: 20px; /* Adjust as needed */
 }
 
+/* Footer styling to keep it at the bottom */
 footer {
-  background-color: #f8f9fa;
-  padding: 10px 0;
+  background-color: #333; /* Adjust as needed */
+  color: white;
   text-align: center;
-  position: relative; /* Change this to relative */
-  width: 100%;
-  bottom: 0;
+  padding: 1rem;
 }
