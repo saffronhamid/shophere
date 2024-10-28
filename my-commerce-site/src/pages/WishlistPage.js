@@ -1,10 +1,11 @@
-// WishlistPage.js
 import React from 'react';
 import { useWishlist } from '../context/WishlistContext';
+import { useCart } from '../context/CartContext';  // Import useCart
 import './WishlistPage.css';
 
 const WishlistPage = () => {
-    const { wishlist } = useWishlist();
+    const { wishlist, removeFromWishlist } = useWishlist();
+    const { addToCart } = useCart();  // Destructure addToCart from Cart context
 
     return (
         <div className="wishlist-container">
@@ -21,8 +22,18 @@ const WishlistPage = () => {
                         </p>
                         <p className="wishlist-item-price">Price: ${item.price}</p>
                         <div className="wishlist-actions">
-                            <button className="wishlist-button add-to-cart">Add to Cart</button>
-                            <button className="wishlist-button remove">Remove</button>
+                            <button
+                                className="wishlist-button add-to-cart"
+                                onClick={() => addToCart(item)}  // Call addToCart when clicked
+                            >
+                                Add to Cart
+                            </button>
+                            <button
+                                className="wishlist-button remove"
+                                onClick={() => removeFromWishlist(item.id)}
+                            >
+                                Remove
+                            </button>
                         </div>
                     </div>
                 ))}

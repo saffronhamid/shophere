@@ -1,25 +1,84 @@
-import React from 'react';
-import './HomeAndLivingPage.css'; // Assuming you have a separate CSS file
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import ProductModal from '../components/ProductModal';
+import { useCart } from '../context/CartContext';
+import { useWishlist } from '../context/WishlistContext';
+import './HomePage.css';
 
-const HomeAndLivingPage = () => {
-    return (
-        <div className="categories-section">
-            <div className="category-card">
-                <img src="https://plus.unsplash.com/premium_photo-1661778773089-8718bcedb39e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG9tZSUyMGludGVyaW9yfGVufDB8fDB8fHww" alt="Interior" />
-                <h3>Interior</h3>
-            </div>
-            <div className="category-card">
-                <img src="https://plus.unsplash.com/premium_photo-1661908377130-772731de98f6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aG9tZSUyMGV4dGVyaW9yfGVufDB8fDB8fHww" alt="Exterior" />
-                <h3>Exterior</h3>
-            </div>
-            <div className="category-card">
-                <img src="https://media.istockphoto.com/id/1685138093/photo/happy-woman-moving-house-and-unrolling-a-carpet-while-unpacking.webp?a=1&b=1&s=612x612&w=0&k=20&c=1XZlbFmkcb2pdpA4fnvJsM_B7-ufYH_daTc_sqFtaY0=" alt="Decor" />
-                <h3>Decor</h3>
-            </div>
-            
-        </div>
-        
-    );
+const HomePage = () => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [filter, setFilter] = useState('all');
+
+  const { addToCart } = useCart();
+  const { addToWishlist } = useWishlist();
+
+  useEffect(() => {
+    const fetchHomeProducts = async () => {
+      try {
+        const response = await axios.get("https://fakestoreapi.com/products/category/home-living"); // Verify this URL
+        setProducts(response.data);
+        setLoading(false);
+      } catch (err) {
+        console.error("Error fetching home-living products:", err); // Log the full error for debugging
+        setError(err.message);
+        setLoading(false);
+      }
+    };
+  
+    fetchHomeProducts();
+  }, []);
+  
+
+  const getFilteredProducts = () => {
+    if (filter === 'under50') return products.filter((product) => product.price < 50);
+    if (filter === '50to100') return products.filter((product) => product.price >= 50 && product.price <= 100);
+    if (filter === 'above100') return products.filter((product) => product.price > 100);
+    return products;
+  };
+
+  if (loading) return <div>Loading products...</div>;
+  if (error) return <div>Error loading products: {error}</div>;
+
+  return (
+    <div className="fashion-container">
+      <h1>Home & Living</h1>
+
+      <div className="filter-container">
+        <label htmlFor="price-filter">Filter by Price:</label>
+        <select id="price-filter" value={filter} onChange={(e) => setFilter(e.target.value)} className="filter-dropdown">
+          <option value="all">All</option>
+          <option value="under50">Under $50</option>
+          <option value="50to100">$50 - $100</option>
+          <option value="above100">Above $100</option>
+        </select>
+      </div>
+
+      <ul className="product-list">
+        {getFilteredProducts().map((product) => (
+          <li key={product.id} className="fashion-section" onClick={() => setSelectedProduct(product)}>
+            <img src={product.image} alt={product.title} className="fashion-image" />
+            <h2 className="title">{product.title}</h2>
+            <p className="description">
+              {product.description.length > 60 ? `${product.description.substring(0, 60)}...` : product.description}
+            </p>
+            <p className="price">Price: ${product.price}</p>
+          </li>
+        ))}
+      </ul>
+
+      {selectedProduct && (
+        <ProductModal
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+          onAddToCart={() => addToCart(selectedProduct)}
+          onAddToWishlist={() => addToWishlist(selectedProduct)}
+        />
+      )}
+    </div>
+  );
 };
 
-export default HomeAndLivingPage;
+export default HomePage;
